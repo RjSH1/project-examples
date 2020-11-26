@@ -2,7 +2,7 @@ template: true   # required for local templates
 valuesFilePath: ./values.yml
 
 resources:
-  - name: npm_example_repo_jfp
+  - name: npm_example_repo_jfp_1
     type: GitRepo
     configuration:
       # SCM integration where the repository is located
@@ -13,7 +13,7 @@ resources:
         # Specifies which branches will trigger dependent steps
         include: master
 
-  - name: npm_example_buildinfo_jfp
+  - name: npm_example_buildinfo_jfp_1
     type: BuildInfo
     configuration:
       sourceArtifactory: demoArt
@@ -29,7 +29,7 @@ pipelines:
           integrations:
             - name:  demoArt  # required
           inputResources:
-            - name: npm_example_repo_jfp         # required
+            - name: npm_example_repo_jfp_1         # required
 
       - name: npm_publish_step
         type: NpmPublish
@@ -42,4 +42,4 @@ pipelines:
           inputSteps:
             - name: npm_build_step                # required
           outputResources:
-            - name: npm_example_buildinfo_jfp                 # optional
+            - name: npm_example_buildinfo_jfp_1                 # optional
