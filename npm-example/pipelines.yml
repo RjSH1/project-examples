@@ -19,7 +19,7 @@ resources:
       sourceArtifactory: demoArt
 
 pipelines:
-  - name: npm_example_pipeline_jfp
+  - name: npm_example_pipeline_jfp_1
     steps:
       - name: npm_build_step
         type: NpmBuild
