@@ -17,7 +17,7 @@ resources:
 
 pipelines:
   - name: demo_application
-    configuration:
+    configuration:
       environmentVariables:
         readOnly:
           JFROG_CLI_BUILD_NAME: backend_build
