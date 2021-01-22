@@ -54,7 +54,7 @@ pipelines:
         type: Bash
         configuration:
           environmentVariables:
-            dockerImageName: 34.68.55.176:8082/docker-local/app
+            dockerImageName: 146.148.104.158:8082/docker-local/gosvc
             dockerImageTag: ${run_number}
           inputResources:
             - name: be_gitRepo
