@@ -1,4 +1,3 @@
-
 resources:
   # Git repo for back-end source
   - name: be_gitRepo
