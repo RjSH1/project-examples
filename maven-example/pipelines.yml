@@ -5,21 +5,15 @@ resources:
       path: RjSH1/project-examples/maven-example
       gitProvider: zenGit
  
-  - name: gosvc_build_info
+  - name: appl_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: demo_art
+      sourceArtifactory: art
       
-  - name: appl_build_info
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: art
- 
-  # Build info for the promoted application
-  - name: appl_promoted_build_info
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: myArtifactory
+  - name: appl_promoted_build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art
 
 pipelines:
   - name: demo_application
