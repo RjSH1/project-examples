@@ -3,7 +3,7 @@ resources:
   - name: be_gitRepo
     type: GitRepo
     configuration:
-      path: project-examples/maven-example
+      path: RjSH1/project-examples
       gitProvider: zenGit
 
  
