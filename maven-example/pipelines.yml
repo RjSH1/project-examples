@@ -5,7 +5,7 @@ resources:
     type: GitRepo
     configuration:
       path: project-examples/maven-example
-      gitProvider: sdemo_github
+      gitProvider: zenGit
 
  
   # Build info for the application
