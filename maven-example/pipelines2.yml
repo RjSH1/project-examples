@@ -11,13 +11,13 @@ resources:
   - name: appl_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: zenArt
  
   # Build info for the promoted application
   - name: appl_promoted_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: zenArt
 
 pipelines:
   - name: demo_application
@@ -36,7 +36,7 @@ pipelines:
           inputResources:
             - name: be_gitRepo
           integrations:
-            - name: art
+            - name: zenArt
           runtime:
             type: image
             image:
@@ -61,7 +61,7 @@ pipelines:
           inputSteps:
             - name: bld_backend
           integrations:
-            - name: art
+            - name: zenArt
         execution:
           onStart:
             - rm -rf $run_dir/workspace/jfrog
@@ -89,7 +89,7 @@ pipelines:
         configuration:
           targetRepository: demo-pipelines
           integrations:
-            - name: myArtifactory
+            - name: zenArt
           inputResources:
             - name: appl_build_info
           outputResources:
