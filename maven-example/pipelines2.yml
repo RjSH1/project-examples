@@ -36,7 +36,7 @@ pipelines:
           inputResources:
             - name: be_gitRepo
           integrations:
-            - name: myArtifactory
+            - name: art
           runtime:
             type: image
             image:
@@ -61,7 +61,7 @@ pipelines:
           inputSteps:
             - name: bld_backend
           integrations:
-            - name: myArtifactory
+            - name: art
         execution:
           onStart:
             - rm -rf $run_dir/workspace/jfrog
