@@ -21,6 +21,9 @@ pipelines:
       environmentVariables:
         readOnly:
           JFROG_CLI_BUILD_NAME: backend_build
+            
+pipelines:
+
     steps:
       - name: bld_backend
         type: MvnBuild
