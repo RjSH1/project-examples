@@ -18,7 +18,7 @@ resources:
   - name: appl_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: myArtifactory
+      sourceArtifactory: demo_art
  
   # Build info for the promoted application
   - name: appl_promoted_build_info
