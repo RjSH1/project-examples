@@ -4,7 +4,7 @@ resources:
   - name: be_gitRepo
     type: GitRepo
     configuration:
-      path: RjSH1/java-backend
+      path: RjSH1/project-examples
       gitProvider: zenGit
  
   # Build info for the application
