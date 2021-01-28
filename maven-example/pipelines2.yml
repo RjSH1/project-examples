@@ -29,8 +29,7 @@ pipelines:
       - name: bld_backend
         type: MvnBuild
         configuration:
-          sourceLocation: .
-          mvnCommand: clean install -ntp
+
           inputResources:
             - name: be_gitRepo
           integrations:
