@@ -29,15 +29,11 @@ pipelines:
       - name: bld_backend
         type: MvnBuild
         configuration:
-
           inputResources:
             - name: be_gitRepo
           integrations:
             - name: zenArt
-        execution:
-          onStart:
-            - javac -version
-            - mvn --version
+
   
       - name: build_app
         type: Bash
