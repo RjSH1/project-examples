@@ -37,3 +37,23 @@ pipelines:
           onStart:
             - javac -version
             - mvn --version
+            
+      - name: publish_app_build
+        type: PublishBuildInfo
+        configuration:
+          forceXrayScan: false
+          inputSteps:
+            - name: bld_backend
+          outputResources:
+            - name: appl_build_info
+ 
+      - name: promote_app_build
+        type: PromoteBuild
+        configuration:
+          targetRepository: demo-pipelines
+          integrations:
+            - name: zenArt
+          inputResources:
+            - name: appl_build_info
+          outputResources:
+            - name: appl_promoted_build_info            
