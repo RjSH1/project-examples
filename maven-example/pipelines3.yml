@@ -20,9 +20,9 @@ pipelines:
       - name: bld_backend
         type: MvnBuild
         configuration:
-          sourceLocation: .
+          sourceLocation: /project-examples/maven-example/
           mvnCommand: clean install -ntp
-          configFileLocation: .
+          configFileLocation: /project-examples/maven-example/
           configFileName: mvn-art-config
           inputResources:
             - name: be_gitRepo
