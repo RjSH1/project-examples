@@ -50,7 +50,6 @@ pipelines:
       - name: promote_app_build
         type: PromoteBuild
         configuration:
-          targetRepository: demo-pipelines
           integrations:
             - name: zenArt
           inputResources:
