@@ -21,10 +21,6 @@ resources:
 
 pipelines:
   - name: demo_application
-    configuration:
-      environmentVariables:
-        readOnly:
-          JFROG_CLI_BUILD_NAME: backend_build
     steps:
       - name: bld_backend
         type: MvnBuild
