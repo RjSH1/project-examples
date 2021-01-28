@@ -14,32 +14,13 @@ resources:
     type: BuildInfo
     configuration:
       sourceArtifactory: zenArt
-      
 pipelines:
   - name: demo_application
+    steps:
+      - name: bld_backend
+        type: MvnBuild
         configuration:
-          environmentVariables:
-            readOnly:
-              JFROG_CLI_BUILD_NAME: backend_build
-
-    steps:
-      - name: bld_backend
-        type: MvnBuild
-        configuration:
-          sourceLocation: .
-          mvnCommand: clean install -ntp
-          inputResources:
-            - name: be_gitRepo
-          integrations:
-            - name: zenArt
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions:
-                  - "11"
-        execution:
-          onStart:
-            - javac -version
-            - mvn --version
+          inputResources:
+            - name: be_gitRepo
+          integrations:
+            - name: zenArt
