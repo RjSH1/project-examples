@@ -22,8 +22,6 @@ pipelines:
         configuration:
           sourceLocation: maven-example
           mvnCommand: clean install -ntp
-          configFileLocation: maven-example
-          configFileName: mvn-art-config
           inputResources:
             - name: be_gitRepo
           integrations:
