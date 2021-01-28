@@ -1,5 +1,5 @@
 resources:
-  - name: gbe_gitRepo
+  - name: be_gitRepo
     type: GitRepo
     configuration:
       path: RjSH1/project-examples
