@@ -27,7 +27,7 @@ pipelines:
           inputResources:
             - name: be_gitRepo
           integrations:
-            - name: demo_art
+            - name: zenArt
           runtime:
             type: image
             image:
