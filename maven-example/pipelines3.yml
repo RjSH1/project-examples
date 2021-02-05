@@ -43,7 +43,7 @@ pipelines:
       - name: promote_app_build
         type: PromoteBuild
         configuration:
-          targetRepository: maven-local        
+          targetRepository: demo-pipelines        
           integrations:
             - name: zenArt
           inputResources:
