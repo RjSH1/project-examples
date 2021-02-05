@@ -17,7 +17,7 @@ resources:
 pipelines:
   - name: demo_application
     steps:
-      - name: bld_backend
+      - name: mvn_build_step
         type: MvnBuild
         configuration:
           sourceLocation: maven-example
@@ -36,7 +36,7 @@ pipelines:
         configuration:
           forceXrayScan: false
           inputSteps:
-            - name: bld_backend
+            - name: mvn_build_step
           outputResources:
             - name: appl_build_info
  
