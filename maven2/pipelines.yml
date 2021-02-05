@@ -1,0 +1,30 @@
+resources:
+  - name: myAppRepo
+    type: GitRepo
+    configuration:
+      gitProvider: zenGit
+      path: RjSH1/project-examples
+      
+  - name: mvn_build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: zenArt 
+      buildName: maven-example
+      buildNumber: 0
+
+pipelines:
+  - name: pipeline_maven_example
+    steps:
+      - name: BuildSample
+        type: MvnBuild
+        configuration:
+          sourceLocation: maven-example
+          resolverSnapshotRepo: maven-jcenter
+          resolverReleaseRepo: maven-jcenter
+          deployerSnapshotRepo: maven-local
+          deployerReleaseRepo: maven-local
+          mvnCommand: clean install
+          inputResources:
+            - name: zenGit
+          integrations:
+            - name: zenArt            
