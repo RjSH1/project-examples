@@ -3,21 +3,21 @@ resources:
     type: GitRepo
     configuration:
       path: RjSH1/project-examples
-      gitProvider: zenGit
+      gitProvider: my_github
  
   - name: appl_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: zenArt
+      sourceArtifactory: demoArt
       
   - name: appl_promoted_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: zenArt
+      sourceArtifactory: demoArt
 pipelines:
   - name: demo_application
     steps:
-      - name: bld_backend
+      - name: mvn_build_step
         type: MvnBuild
         configuration:
           sourceLocation: maven-example
@@ -27,25 +27,25 @@ pipelines:
           deployerReleaseRepo: maven-local
           mvnCommand: clean install
           inputResources:
-            - name: zenGit
+            - name: be_gitRepo
           integrations:
-            - name: zenArt 
+            - name: demoArt 
             
       - name: publish_app_build
         type: PublishBuildInfo
         configuration:
           forceXrayScan: false
           inputSteps:
-            - name: bld_backend
+            - name: mvn_build_step
           outputResources:
             - name: appl_build_info
  
       - name: promote_app_build
         type: PromoteBuild
         configuration:
-          targetRepository: demo-pipelines        
+          targetRepository: maven-local        
           integrations:
-            - name: zenArt
+            - name: demoArt
           inputResources:
             - name: appl_build_info
           outputResources:
