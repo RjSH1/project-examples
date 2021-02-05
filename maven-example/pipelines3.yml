@@ -20,12 +20,12 @@ pipelines:
       - name: mvn_build_step
         type: MvnBuild
         configuration:
-          sourceLocation: maven-example
-          resolverSnapshotRepo: maven-jcenter
-          resolverReleaseRepo: maven-jcenter
-          deployerSnapshotRepo: maven-local
-          deployerReleaseRepo: maven-local
-          mvnCommand: clean install
+         # sourceLocation: maven-example
+         # resolverSnapshotRepo: maven-jcenter
+         # resolverReleaseRepo: maven-jcenter
+         # deployerSnapshotRepo: maven-local
+         # deployerReleaseRepo: maven-local
+         # mvnCommand: clean install
           inputResources:
             - name: be_gitRepo
           integrations:
