@@ -21,22 +21,15 @@ pipelines:
         type: MvnBuild
         configuration:
           sourceLocation: maven-example
-          mvnCommand: clean install -ntp
+          resolverSnapshotRepo: maven-jcenter
+          resolverReleaseRepo: maven-jcenter
+          deployerSnapshotRepo: maven-local
+          deployerReleaseRepo: maven-local
+          mvnCommand: clean install
           inputResources:
-            - name: be_gitRepo
+            - name: zenGit
           integrations:
-            - name: zenArt
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions:
-                  - "11"
-        execution:
-          onStart:
-            - javac -version
-            - mvn --version
+            - name: zenArt 
             
       - name: publish_app_build
         type: PublishBuildInfo
