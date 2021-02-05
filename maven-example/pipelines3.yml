@@ -27,7 +27,7 @@ pipelines:
           deployerReleaseRepo: maven-local
           mvnCommand: clean install
           inputResources:
-            - name: zenGit
+            - name: be_gitRepo
           integrations:
             - name: zenArt 
             
